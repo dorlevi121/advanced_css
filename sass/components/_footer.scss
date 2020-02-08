@@ -1,10 +1,17 @@
 .footer {
-  background-color: rgba($color-black, .8);
+  background-color: rgba($color-black, 0.8);
   padding: 10rem 0;
   font-size: 1.4rem;
 
+  @include respond(tab-port) {
+    padding: 8rem 0;
+  }
+
   &_logo-box {
     text-align: center;
+    @include respond(tab-port) {
+      margin-bottom: 4rem;
+    }
   }
 
   &_logo {
@@ -13,9 +20,14 @@
   }
 
   &_navigation {
-    border-top: 1px solid rgba($color-white, .3);
+    border-top: 1px solid rgba($color-white, 0.3);
     padding-top: 2rem;
     display: inline-block;
+
+    @include respond(tab-port) {
+      width: 80%;
+      text-align: center;
+    }
   }
 
   &_list {
@@ -28,11 +40,10 @@
     &:not(:last-child) {
       margin-right: 1.5rem;
     }
-
   }
 
   &_link {
-    transition: all .2s;
+    transition: all 0.2s;
 
     &:link,
     &:visited {
@@ -42,21 +53,26 @@
       display: inline-block;
     }
 
-    &:hover, &:active {
+    &:hover,
+    &:active {
       color: $color-primary;
-      box-shadow: 0 1rem 2rem rgba($color-black, .4);
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
       transform: rotate(5deg) scale(1.3);
     }
-
   }
 
   &_copyright {
-    border-top: 1px solid rgba($color-white, .3);
+    border-top: 1px solid rgba($color-white, 0.3);
     padding-top: 2rem;
     color: $color-white;
     font-size: $default-font-size;
     width: 80%;
     float: right;
-  }
 
+    @include respond(tab-port) {
+      width: 80%;
+      text-align: center;
+      float: none;
+    }
+  }
 }
